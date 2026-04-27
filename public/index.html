@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
 
+<style>
+body {
+    background: lavender;
+    text-align: center;
+    font-family: Arial;
+    padding-top: 50px;
+}
+input, button {
+    padding: 12px;
+    margin: 8px;
+    width: 80%;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Join Chat</h2>
+
+<input id="nameInput" placeholder="Your Name"><br>
+<input id="roomInput" placeholder="Room Number"><br>
+<input id="passwordInput" type="password" placeholder="Password"><br>
+
+<button onclick="join()">Join</button>
+
+<script>
+function join() {
+    const name = document.getElementById("nameInput").value.trim();
+    const room = document.getElementById("roomInput").value.trim();
+    const password = document.getElementById("passwordInput").value.trim();
+
+    if (!name) return alert("Enter name");
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("room", room);
+    localStorage.setItem("password", password);
+
+    window.location.href = "chat.html";
+}
+</script>
+
+</body>
+</html>
